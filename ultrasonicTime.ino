@@ -32,11 +32,11 @@ void setup() {
     Serial.begin(9600);
     pinMode(TRIG_PIN, OUTPUT);
     pinMode(ECHO_PIN, INPUT);
-    applyShortLowPulse();
 }
 
 
 void loop() {
+    applyShortLowPulse();
     duration = pulseIn(ECHO_PIN, HIGH);
     distanceCm = timeToDistance(duration);
     if (distanceCm <= 200) {

@@ -10,7 +10,7 @@ const int ECHO_PIN = 12;
 unsigned long time;
 float timeseconds;
 long duration, distanceCm;
-
+int calibratedDist=200;
 
 void applyShortLowPulse() {
     // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
@@ -39,7 +39,8 @@ void loop() {
     applyShortLowPulse();
     duration = pulseIn(ECHO_PIN, HIGH);
     distanceCm = timeToDistance(duration);
-    if (distanceCm <= 200) {
+
+    if (distanceCm <= calibratedDist) {
         Serial.print("Time: "); 
         time = millis();
         timeseconds = time/1000.0;
@@ -47,5 +48,5 @@ void loop() {
         Serial.print(timeseconds); 
         Serial.println(" seconds");
     }
-    delay(500);
+    delay(20);
 }

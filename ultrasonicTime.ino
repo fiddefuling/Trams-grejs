@@ -2,11 +2,11 @@
   The Circuit:
   * VCC connection of the sensor attached to +5V
   * GND connection of the sensor attached to GND
-  * TRIG connection of the sensor attached to digital pin 12
-  * ECHO connection of the sensor attached to digital pin 13
+  * TRIG connection of the sensor attached to digital pin 11
+  * ECHO connection of the sensor attached to digital pin 12
 */
-const int TRIG_PIN = 12;
-const int ECHO_PIN = 13;
+const int TRIG_PIN = 11;
+const int ECHO_PIN = 12;
 unsigned long time;
 float timeseconds;
 long duration, distanceCm;
